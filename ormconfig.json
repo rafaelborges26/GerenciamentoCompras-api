@@ -1,10 +1,10 @@
 {
-    "type": "mysql",
+    "type": "postgres",
     "host": "localhost",
-    "port": 3306,
-    "username": "root",
-    "password": "123456",
-    "database": "converter",
+    "port": 5438,
+    "username": "postgres",
+    "password": "docker",
+    "database": "gerenciamento_compras",
     "entities": [
         "./src/models/*.ts"
     ],

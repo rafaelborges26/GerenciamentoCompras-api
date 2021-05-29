@@ -1,23 +1,17 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateUsers1601937799892 implements MigrationInterface {
+export class CreateClients1620619880259 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-
         await queryRunner.createTable(
             new Table({
-                name: 'users',
+                name: 'clients',
                 columns: [
                     {
                         name: 'id',
                         type: 'uuid',
                         isPrimary: true,
-                        generationStrategy: 'uuid',
-                    },
-                    {
-                        name: 'email',
-                        type: 'varchar',
-                        isNullable: false
+                        generationStrategy: 'uuid'
                     },
                     {
                         name: 'name',
@@ -25,14 +19,24 @@ export class CreateUsers1601937799892 implements MigrationInterface {
                         isNullable: false
                     },
                     {
-                        name: 'password',
+                        name: 'email',
                         type: 'varchar',
-                        isNullable: false
+                        isNullable: true   
                     },
                     {
                         name: 'celnumber',
                         type: 'varchar',
-                        isNullable: true
+                        isNullable: true,
+                    },
+                    {
+                        name: 'telnumber',
+                        type: 'varchar',
+                        isNullable: true,
+                    },
+                    {
+                        name: 'address',
+                        type: 'varchar',
+                        isNullable: false,
                     },
                     {
                         name: 'created_at',
@@ -47,12 +51,10 @@ export class CreateUsers1601937799892 implements MigrationInterface {
                 ]
             })
         )
-
     }
-    
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('users')
+        await queryRunner.dropTable('clients')
     }
 
 }

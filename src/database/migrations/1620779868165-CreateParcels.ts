@@ -1,12 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateUsers1601937799892 implements MigrationInterface {
+export class CreateParcels1620779868165 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-
         await queryRunner.createTable(
             new Table({
-                name: 'users',
+                name: 'parcels',
                 columns: [
                     {
                         name: 'id',
@@ -15,24 +14,19 @@ export class CreateUsers1601937799892 implements MigrationInterface {
                         generationStrategy: 'uuid',
                     },
                     {
-                        name: 'email',
-                        type: 'varchar',
-                        isNullable: false
+                        name: 'value',
+                        type: 'numeric',
+                        isNullable: false,
                     },
                     {
-                        name: 'name',
-                        type: 'varchar',
-                        isNullable: false
+                        name: 'quantity',
+                        type: 'int',
+                        isNullable: false,
                     },
                     {
-                        name: 'password',
-                        type: 'varchar',
-                        isNullable: false
-                    },
-                    {
-                        name: 'celnumber',
-                        type: 'varchar',
-                        isNullable: true
+                        name: 'due_date',
+                        type: 'date',
+                        isNullable: false,
                     },
                     {
                         name: 'created_at',
@@ -47,12 +41,10 @@ export class CreateUsers1601937799892 implements MigrationInterface {
                 ]
             })
         )
-
     }
-    
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('users')
+        await queryRunner.dropTable('parcels')
     }
 
 }
