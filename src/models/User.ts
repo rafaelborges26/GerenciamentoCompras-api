@@ -7,10 +7,16 @@ class User {
     id: string
 
     @Column()
+    name: string
+
+    @Column()
     email: string
 
     @Column()
     password: string
+
+    @Column()
+    celnumber: string
 
     @CreateDateColumn()
     created_at: Date

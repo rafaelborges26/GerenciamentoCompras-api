@@ -9,18 +9,26 @@ const usersRouter = Router()
 
 usersRouter.post('/', async (request, response ) => {
 
-        const { email,password } = request.body
+        const { name, email, password, celnumber } = request.body
 
         const createUser = new CreateUsers
 
         const user = await createUser.execute({
+            name,
             email,
-            password
+            password,
+            celnumber,
         })
+
+        if(user) {
+            return response.json(user)
+        }else {
+            return response.status(400)
+        }
 
         //delete user.password
 
-        return response.json(user)
+        
 
 
 })

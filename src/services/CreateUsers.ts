@@ -3,12 +3,14 @@ import { getRepository } from 'typeorm'
 import { hash } from 'bcryptjs'
 
 interface Request {
+    name: string
     email: string
     password: string
+    celnumber: string
 }
 
 class CreateUserService {
-    public async execute({ email, password }:Request): Promise<User> { //return no formato do model definido
+    public async execute({ name, email, password, celnumber }:Request): Promise<User> { //return no formato do model definido
 
         const usersRepository = getRepository(User) //obter funções do repository, delete, insert..
         const checkUserExists = await usersRepository.findOne({
@@ -16,13 +18,14 @@ class CreateUserService {
         })
 
         if(checkUserExists) {
-            throw new Error('Email already used.')
+            throw new Error('Email already used.')            
         }
 
         const hashedPassword = await hash(password, 8)
-
         const user = usersRepository.create({
+            name,
             email,
+            celnumber,
             password: hashedPassword
         })
 

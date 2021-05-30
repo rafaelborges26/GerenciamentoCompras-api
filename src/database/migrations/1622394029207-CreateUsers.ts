@@ -1,9 +1,8 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import {MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateUsers1601937799892 implements MigrationInterface {
+export class CreateUsers1622394029207 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-
         await queryRunner.createTable(
             new Table({
                 name: 'users',
@@ -13,6 +12,7 @@ export class CreateUsers1601937799892 implements MigrationInterface {
                         type: 'uuid',
                         isPrimary: true,
                         generationStrategy: 'uuid',
+                        default: 'uuid_generate_v4()'
                     },
                     {
                         name: 'email',
@@ -47,9 +47,7 @@ export class CreateUsers1601937799892 implements MigrationInterface {
                 ]
             })
         )
-
     }
-    
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('users')
