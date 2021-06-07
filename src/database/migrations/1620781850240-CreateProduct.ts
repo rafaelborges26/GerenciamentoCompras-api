@@ -27,7 +27,7 @@ export class CreateProduct1620781850240 implements MigrationInterface {
                     {
                         name: 'price',
                         type: 'numeric',
-                        isNullable: false,
+                        isNullable: true,
                     },
                     {
                         name: 'created_at',

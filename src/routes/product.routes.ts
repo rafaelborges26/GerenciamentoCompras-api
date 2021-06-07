@@ -2,6 +2,8 @@ import { Router } from 'express';
 
 import CreateProduct from '../services/CreateProduct'
 
+import GetProduct from '../services/GetProduct'
+
 const productRouter = Router()
 
 productRouter.post('/', async (request, response) => {
@@ -20,6 +22,15 @@ productRouter.post('/', async (request, response) => {
     } else {
         return response.status(400)
     }
+
+})
+
+productRouter.get('/', async (request, response) => {
+    const getProduct = new GetProduct
+
+    const product = await getProduct.execute()
+
+    return response.json(product)
 
 })
 
