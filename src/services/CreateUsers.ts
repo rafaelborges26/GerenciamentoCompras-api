@@ -12,6 +12,7 @@ interface Request {
 class CreateUserService {
     public async execute({ name, email, password, celnumber }:Request): Promise<User> { //return no formato do model definido
 
+    try {
         const usersRepository = getRepository(User) //obter funções do repository, delete, insert..
         const checkUserExists = await usersRepository.findOne({
             where: { email: email }//campo igual ao valor q to recebendo
@@ -32,7 +33,9 @@ class CreateUserService {
         await usersRepository.save(user)
 
         return user
-
+    }catch(err) {
+        throw new Error('Email already used.')
+    }
     }
 }
 

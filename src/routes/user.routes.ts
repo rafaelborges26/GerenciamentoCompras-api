@@ -25,12 +25,6 @@ usersRouter.post('/', async (request, response ) => {
         }else {
             return response.status(400)
         }
-
-        //delete user.password
-
-        
-
-
 })
 
 export default usersRouter

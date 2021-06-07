@@ -1,12 +1,12 @@
 import { Router } from 'express'
 
-import converterRoutes from './converter.routes'
+import productRoutes from './product.routes'
 import sessionsRoutes from './session.routes'
 import usersRouter from './user.routes'
 
 const routes = Router()
 
-routes.use('/converter',converterRoutes)
+routes.use('/product',productRoutes)
 routes.use('/sessions', sessionsRoutes)
 routes.use('/users',usersRouter)
 
