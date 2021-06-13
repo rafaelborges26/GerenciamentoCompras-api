@@ -20,12 +20,22 @@ export class CreateOrder1620620709249 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
+                        name: 'valueTotal',
+                        type: 'numeric',
+                        isNullable: false,
+                    },
+                    {
                         name: 'qt_parcels_total',
                         type: 'int',
                         isNullable: false,
                     },
                     {
                         name: 'type_payment',
+                        type: 'varchar',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'due_date',
                         type: 'varchar',
                         isNullable: false,
                     },
