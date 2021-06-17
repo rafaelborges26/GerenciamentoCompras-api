@@ -1,28 +1,27 @@
-import { Router } from 'express';
+/*import { Router } from 'express';
 
-import CreateOrder from '../services/CreateOrder'
+import CreateParcel from '../services/CreateOrder'
 
-const orderRouter = Router()
+const parcelRouter = Router()
 
-orderRouter.post('/', async (request, response) => {
-    const { description, valueTotal, qt_parcels_total, type_payment, product_id } = request.body
+parcelRouter.post('/', async (request, response) => {
+    const { value, quantity, due_date, order_id } = request.body
 
-    const createOrder = new CreateOrder
+    const createParcel = new CreateParcel
     
-    const order = await createOrder.execute({
-        description,
-        valueTotal,
-        qt_parcels_total,
-        type_payment,
-        product_id
+    const parcel = await createParcel.execute({
+        value,
+        quantity, 
+        due_date, 
+        order_id
     })
 
-    if(order) {
-        return response.json(order)
+    if(parcel) {
+        return response.json(parcel)
     } else {
         return response.status(400)
     }
 
 })
 
-export default orderRouter
+export default parcelRouter*/

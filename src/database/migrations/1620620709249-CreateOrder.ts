@@ -36,7 +36,7 @@ export class CreateOrder1620620709249 implements MigrationInterface {
                     },
                     {
                         name: 'due_date',
-                        type: 'varchar',
+                        type: 'date',
                         isNullable: false,
                     },
                     {

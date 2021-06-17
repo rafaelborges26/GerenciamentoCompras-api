@@ -1,6 +1,6 @@
 import {Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn} from 'typeorm'
 
-
+/*
 @Entity('parcels')
 class Parcel {
 
@@ -28,3 +28,4 @@ class Parcel {
 }
 
 export default Parcel
+*/

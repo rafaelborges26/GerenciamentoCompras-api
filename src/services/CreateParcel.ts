@@ -1,4 +1,4 @@
-import Parcel from '../models/Parcel'
+/*import Parcel from '../models/Parcel'
 import { getRepository } from 'typeorm'
 
 interface Request {
@@ -9,7 +9,7 @@ interface Request {
 }
 
 class CreateParcelService {
-    public async execute({ value, quantity, due_date, order_id, }:Request): Promise<Product> {
+    public async execute({ value, quantity, due_date, order_id, }:Request): Promise<Parcel> {
 
     try {
         const parcelRepository = getRepository(Parcel) //obter funções do repository, delete, insert..
@@ -29,3 +29,4 @@ class CreateParcelService {
 }
 
 export default CreateParcelService
+*/

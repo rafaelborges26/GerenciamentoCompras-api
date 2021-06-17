@@ -19,7 +19,7 @@ class Order {
     type_payment: string
 
     @Column()
-    due_date: string
+    due_date: Date
 
     @Column()
     product_id: string
