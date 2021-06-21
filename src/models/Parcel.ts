@@ -1,6 +1,7 @@
-import {Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn} from 'typeorm'
+import {Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn} from 'typeorm'
+import Order from './Order'
 
-/*
+
 @Entity('parcels')
 class Parcel {
 
@@ -16,6 +17,8 @@ class Parcel {
     @Column()
     due_date: Date
 
+    @ManyToOne(() => Order)
+    @JoinColumn({name: 'id'})
     @Column()
     order_id: string
 
@@ -28,4 +31,3 @@ class Parcel {
 }
 
 export default Parcel
-*/

@@ -1,6 +1,6 @@
 import Order from '../models/Order'
 import { getRepository } from 'typeorm'
-//import CreateParcel from '../services/CreateParcel'
+import CreateParcel from '../services/CreateParcel'
 
 interface Request {
     description: string,
@@ -19,7 +19,7 @@ class CreateOrderService {
     
         //criando as parcelas
 
-  //      const createParcel = new CreateParcel()
+        const createParcel = new CreateParcel()
 
         const valueParcel = valueTotal/qt_parcels_total
 
@@ -40,28 +40,30 @@ class CreateOrderService {
 
 
         console.log(order)
-        for (let index = 0; index < qt_parcels_total; index++) {
-            
-            //1 parcela
-            if(qt_parcels_total === 1) {
-                console.log("1 parcela")
-            //const parcel = await createParcel.execute({
-            //    due_date,
-            //    quantity,
-            //    value: valueParcel,
-            //    order_id: 
-            //})
-                
-            }else {
-                console.log("+ de 1 parcela")
-            }
-
-            //mais de uma parcela
-        }
+        //for (let index = 0; index < qt_parcels_total; index++) {
+        //    
+        //    //1 parcela
+        //    if(qt_parcels_total === 1) {
+        //        console.log("1 parcela")
+        //        
+        //    const parcel = await createParcel.execute({
+        //        due_date,
+        //        quantity: 1,
+        //        value: valueParcel,
+        //        order_id: 
+        //    })
+        //        
+        //    }else {
+        //        console.log("+ de 1 parcela")
+        //    }
+//
+        //    //mais de uma parcela
+        //}
 
         return order
     }catch(err) {
         console.log(err)
+        throw new Error('Error found.')
     }
     }
 }

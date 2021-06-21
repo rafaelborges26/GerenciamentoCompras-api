@@ -1,6 +1,6 @@
-/*import { Router } from 'express';
+import { Router } from 'express';
 
-import CreateParcel from '../services/CreateOrder'
+import CreateParcel from '../services/CreateParcel'
 
 const parcelRouter = Router()
 
@@ -11,7 +11,7 @@ parcelRouter.post('/', async (request, response) => {
     
     const parcel = await createParcel.execute({
         value,
-        quantity, 
+        quantity,
         due_date, 
         order_id
     })
@@ -24,4 +24,4 @@ parcelRouter.post('/', async (request, response) => {
 
 })
 
-export default parcelRouter*/
+export default parcelRouter

@@ -1,4 +1,4 @@
-/*import Parcel from '../models/Parcel'
+import Parcel from '../models/Parcel'
 import { getRepository } from 'typeorm'
 
 interface Request {
@@ -23,10 +23,10 @@ class CreateParcelService {
         return parcel
     }catch(err) {
         console.log(err)
+        throw new Error('Error found.')
     }
 
     }
 }
 
 export default CreateParcelService
-*/
